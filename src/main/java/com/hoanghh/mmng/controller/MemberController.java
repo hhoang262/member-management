@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +20,11 @@ public class MemberController {
     @Autowired
     public MemberController(MemberService memberService){
         this.memberService = memberService;
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/")
+    public ResponseEntity get(){
+        return new ResponseEntity<>(new Member(), HttpStatus.OK);
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")

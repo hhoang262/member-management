@@ -2,7 +2,10 @@ package com.hoanghh.mmng.entity;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 
 @Data
@@ -23,4 +26,16 @@ public class Member {
     private String phoneNumber;
     private String address;
     private String job;
+
+    public Member() {
+        this.fullname = "";
+        this.alias = "";
+        this.gender = "";
+        this.dob = "";
+        this.photoIdentifyUrl = "";
+        this.story = "";
+        this.phoneNumber = "";
+        this.address = "";
+        this.job = "";
+    }
 }
